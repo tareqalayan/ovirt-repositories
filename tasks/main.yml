@@ -1,0 +1,8 @@
+---
+- name: Fail when invalid parameters
+  fail:
+    msg: "You must specify ovirt_rpm_repo"
+  when: "ovirt_rpm_repo is not defined"
+
+- name: Install repositorites from RPM
+  include: rpm.yml

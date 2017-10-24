@@ -1,0 +1,8 @@
+---
+- name: Backup repositories
+  include: backup-repos.yml
+
+- name: Install rpm repository package
+  yum:
+    name: "{{ ovirt_rpm_repo }}"
+    state: present

@@ -1,0 +1,10 @@
+---
+- name: creating directory repo-backup for repo files
+  file:
+    path: /tmp/repo-backup
+    state: directory
+
+- name: copy content of yum.repos.d to backup folder
+  shell: 'cp /etc/yum.repos.d/*.repo /tmp/repo-backup'
+  tags:
+    - skip_ansible_lint
